@@ -3,4 +3,4 @@ description: "Create markdown index"
 author: "si-arakaki"
 runs:
   using: "node20"
-  main: "dist/main.js"
+  main: "dist/index.js"
