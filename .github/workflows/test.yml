@@ -1,0 +1,10 @@
+name: test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    steps:
+      - uses: actions/checkout@v5
+      - uses: si-arakaki/action-create-markdown-index@v1

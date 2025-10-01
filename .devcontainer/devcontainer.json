@@ -1,0 +1,6 @@
+{
+  "name": "action-create-markdown-index",
+  "dockerComposeFile": "compose.yaml",
+  "service": "app",
+  "workspaceFolder": "/workspace/app"
+}

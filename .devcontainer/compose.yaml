@@ -1,0 +1,10 @@
+services:
+  app:
+    image: github.com/si-arakaki/action-create-markdown-index
+    build:
+      context: ..
+      dockerfile: ./.devcontainer/Dockerfile
+    container_name: action-create-markdown-index
+    command: sleep infinity
+    volumes:
+      - ..:/workspace/app
