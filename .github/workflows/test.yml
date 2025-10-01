@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: si-arakaki/action-create-markdown-index@latest
+      - uses: si-arakaki/action-create-markdown-index@v1
