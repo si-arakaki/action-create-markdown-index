@@ -26,7 +26,7 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("status: %+v\n", status)
+	fmt.Printf("status: %s\n", status)
 
 	err = filepath.Walk(workspace, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
