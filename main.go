@@ -2,15 +2,26 @@ package main
 
 import (
 	"fmt"
-	"io/fs"
+	"os"
 	"path/filepath"
-
-	"github.com/si-arakaki/action-create-markdown-index/lib/env"
 )
 
 func main() {
-	filepath.WalkDir(env.Home(), func(path string, d fs.DirEntry, err error) error {
-		fmt.Printf("filepath.WalkDir\n\tpath: %s\n\tfs.DirEntry: %+v\n\terror: %+v\n", path, d, err)
+	workspace := "/github/workspace"
+
+	err := filepath.Walk(workspace, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if !info.IsDir() && filepath.Ext(info.Name()) == ".md" {
+			// Markdown ファイルを出力
+			fmt.Println(path)
+		}
 		return nil
 	})
+
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error walking the path %q: %v\n", workspace, err)
+		os.Exit(1)
+	}
 }
