@@ -2,5 +2,5 @@ name: "Create markdown index"
 description: "Create markdown index"
 author: "si-arakaki"
 runs:
-  using: "node20"
-  main: "dist/index.js"
+  using: docker
+  image: Dockerfile
